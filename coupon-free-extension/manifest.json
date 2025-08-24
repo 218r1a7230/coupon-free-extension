@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "CouponGuard",
+  "version": "1.0",
+  "description": "Automatically finds and applies validated coupons on shopping sites.",
+  "permissions": ["tabs", "storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.com/*", "*://*.bestbuy.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
